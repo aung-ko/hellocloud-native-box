@@ -5,7 +5,7 @@
 Vagrant.configure("2") do |config|
 
     config.vm.define "hellocloud-native-box" do |vm1|
-      config.ssh.private_key_path = "/Users/sai/hellocloud-boxes/hellocloud-native-box/.ssh/id_rsa"
+      config.ssh.private_key_path = "/home/aungko/kube-demo/hellocloud-native-box/.ssh/id_rsa"
       config.ssh.forward_agent = true
       config.ssh.username = "vagrant"
       config.ssh.password = "vagrant"

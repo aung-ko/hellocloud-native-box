@@ -1,0 +1,8 @@
+.vagrant/
+.bash_it/
+.cache/
+.ssh/
+.bash_history
+.sudo_as_admin_successful
+.lesshst
+LICENSE
