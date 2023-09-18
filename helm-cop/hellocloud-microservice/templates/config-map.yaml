@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+#   name: hellocloud-configmap
+    name: {{ .Release.Name }}-{{ .Chart.Version }}
+data:
+#   myvalue: "Hello Cloud"
+    myvalue: {{ .Values.myvalue }}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: currency-{{ .Values.currencyCode }}-app
+  labels:
+    app: {{ .Values.currencyCode }}-microservice
+spec:
+  containers:
+  - name: currency-{{ .Values.currencyCode }}
+    image: hashicorp/http-echo:0.2.3
+    args:
+      - "-text=feature available in {{ .Values.currencyCode }}"
+      - -listen=:{{ .Values.port }}
