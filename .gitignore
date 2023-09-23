@@ -1,8 +1,12 @@
 .vagrant/
+.asdf/
 .bash_it/
 .cache/
 .ssh/
 .bash_history
 .sudo_as_admin_successful
 .lesshst
+.kube
 LICENSE
+
+istio-cop/1-start-istio/istio-1.18.2

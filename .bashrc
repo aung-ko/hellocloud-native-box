@@ -87,3 +87,8 @@ source <(kubectl completion bash)
 
 # Use the "barbuk theme
 export BASH_IT_THEME="barbuk"
+
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
