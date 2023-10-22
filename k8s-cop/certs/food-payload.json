@@ -1,0 +1,8 @@
+{
+    "iss": "kubernetes/serviceaccount",
+    "kubernetes.io/serviceaccount/namespace": "food-tech",
+    "kubernetes.io/serviceaccount/secret.name": "default-token-rzssl",
+    "kubernetes.io/serviceaccount/service-account.name": "default",
+    "kubernetes.io/serviceaccount/service-account.uid": "1cddf16f-ccc2-4942-9436-ca1159240c56",
+    "sub": "system:serviceaccount:food-tech:default"
+  }

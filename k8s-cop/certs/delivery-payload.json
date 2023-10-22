@@ -1,0 +1,8 @@
+{
+  "iss": "kubernetes/serviceaccount",
+  "kubernetes.io/serviceaccount/namespace": "delivery-tech",
+  "kubernetes.io/serviceaccount/secret.name": "default-token-wxg4f",
+  "kubernetes.io/serviceaccount/service-account.name": "default",
+  "kubernetes.io/serviceaccount/service-account.uid": "cfd7d237-fc80-4075-9da8-261457090634",
+  "sub": "system:serviceaccount:delivery-tech:default"
+}
