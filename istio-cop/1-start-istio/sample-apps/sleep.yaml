@@ -28,8 +28,8 @@ metadata:
     app: sleep
 spec:
   ports:
-  - port: 80
-    name: http
+    - port: 80
+      name: http
   selector:
     app: sleep
 ---
@@ -43,22 +43,23 @@ spec:
     matchLabels:
       app: sleep
   template:
-    metadata: 
+    metadata:
       labels:
         app: sleep
     spec:
       serviceAccountName: sleep
       containers:
-      - name: sleep
-        image: governmentpaas/curl-ssl:terraform-14
-        command: ["/bin/sleep", "3650d"]
-        imagePullPolicy: IfNotPresent
-        volumeMounts:
-        - mountPath: /etc/sleep/tls
-          name: secret-volume
+        - name: sleep
+          image: governmentpaas/curl-ssl:terraform-14
+          command: ["/bin/sleep", "3650d"]
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - mountPath: /etc/sleep/tls
+              name: secret-volume
       volumes:
-      - name: secret-volume
-        secret:
-          secretName: sleep-secret
-          optional: true
+        - name: secret-volume
+          secret:
+            secretName: sleep-secret
+            optional: true
 ---
+

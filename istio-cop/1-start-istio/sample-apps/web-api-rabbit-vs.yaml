@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: web-api-gw-rabbit-vs
+spec:
+  hosts:
+  - "rabbit.io"
+  gateways:
+  - web-api-gateway
+  http:
+  - route:
+    - destination:
+        host: web-api.rabbit.svc.cluster.local
+        port:
+          number: 8080
