@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: root-certificate-ca
+  namespace: cert-manager
+spec:
+  isCA: true
+  issuerRef:
+    name: selfsigned-ca-cluster-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
+  usages:
+    - server auth
+    - client auth
+  secretName: root-certificate-ca-tls
+  commonName: hellocloud.io
+  duration: 8760h #365 days
+  renewBefore: 360h #15 days
+  # privateKey:
+  #   algorithm: ECDSA
+  #   size: 256

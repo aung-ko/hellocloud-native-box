@@ -1,0 +1,26 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hellocloud-cert
+  namespace: istio-ingress
+spec:
+  isCA: false
+  issuerRef:
+    name: hellocloud-root-ca-issuer
+    kind: ClusterIssuer
+  usages:
+    - server auth
+    - client auth
+  secretName: hellocloud-cert
+  commonName: hellocloud.io
+  # commonName: blog.hellocloud.io
+  duration: 2160h #90 days
+  renewBefore: 360h #15 days
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 4096
+  dnsNames:
+  - hellocloud.io
+  # - blog.hellocloud.io
+  # - www.blog.hellocloud.io
