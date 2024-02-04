@@ -1,0 +1,5 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+dl.smallstep.com	0	1	1706105564	15724800
+github.com	0	1	1706105564	31536000
