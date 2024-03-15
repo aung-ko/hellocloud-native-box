@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: saturday-party
+  name: saturday-party
+spec:
+  ports:
+  - port: 5676
+    protocol: TCP
+    targetPort: 5676
+    name: monti-app
+  - port: 5677
+    protocol: TCP
+    targetPort: 5677
+    name: myiek-app
+  - port: 5678
+    protocol: TCP
+    targetPort: 5678
+    name: tea-app
+  - port: 5679
+    protocol: TCP
+    targetPort: 5679
+    name: laphatthoke-app
+  - port: 1234
+    protocol: TCP
+    targetPort: 1234
+    name: sushi-app
+  selector:
+    app: burmese-menu
+  type: ClusterIP

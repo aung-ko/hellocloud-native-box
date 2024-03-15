@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: western-menu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: western-menu
+  template:
+    metadata:
+      labels:
+        app: western-menu
+    spec:
+      containers:
+      - name: wine-app
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=please enjoy our best wine!"
+      - name: cheese-app
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=please enjoy our best cheese from Italy!"
+        - "-listen=:5679"
+      - name: beer-app
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=Get That Man a BEER!"
+        - "-listen=:5680"
+      - name: steak-app
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=Time for dinner with Japanese Steak!"
+        - "-listen=:5681"

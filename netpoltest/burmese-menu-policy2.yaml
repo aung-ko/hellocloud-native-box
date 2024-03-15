@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: burmese-menu-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: burmese-menu
+  policyTypes:
+  - Ingress
+  ingress:
+  #################
+  - from:
+    - podSelector:
+        matchLabels:
+          app: burmese
+    ports:
+    - protocol: TCP
+      port: 5676 # monti
+    - protocol: TCP
+      port: 5677 # Myiek
+    - protocol: TCP
+      port: 5678 # Tea
+    - protocol: TCP
+      port: 5679 # la phat
+  #################
+  - from:
+    - podSelector:
+        matchLabels:
+          app: japan
+    ports:
+    - protocol: TCP
+      port: 1234
+  #################
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          shop: konoha
+    ports:
+    - protocol: TCP
+      port: 1234
+    - protocol: TCP
+      port: 5679 # la phat
+  #################

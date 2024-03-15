@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: burmese-menu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: burmese-menu
+  template:
+    metadata:
+      labels:
+        app: burmese-menu
+    spec:
+      containers:
+      - name: monti-container
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=soe soe monti thoke!"
+        - "-listen=:5676"
+      - name: myiek-container
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=U Naing Lat Yar - Myiek Kat Kyi Kaik"
+        - "-listen=:5677"
+      - name: tea-container
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=Mandalay 3 Color Tea!"
+        - "-listen=:5678"
+      - name: laphatthoke-container
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=Naing Ngyan Kyaw A Yee Taung La Phat!"
+        - "-listen=:5679"
+      - name: sushi-container
+        image: hashicorp/http-echo:1.0.0
+        args:
+        - "-text=Japan Ma Lay Sushi!"
+        - "-listen=:1234"

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dnstools-burmese
+  labels:
+    app: burmese
+spec:
+  containers:
+  - name: dnstools-burmese
+    image: infoblox/dnstools:latest
+    command:
+    - sleep
+    - "3600"  
+  restartPolicy: Always
